@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<!-- this example uses TFJS 3.7.0 - older versions back to 2.1.0 are supported -->
+		<script src="https://unpkg.com/@tensorflow/tfjs-core@3.7.0/dist/tf-core.js"></script>
+		<script src="https://unpkg.com/@tensorflow/tfjs-layers@3.7.0/dist/tf-layers.js"></script>
+		<script src="https://unpkg.com/@tensorflow/tfjs-converter@3.7.0/dist/tf-converter.js"></script>
+		<script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@3.7.0/dist/tf-backend-webgl.js"></script>
+		<script src="https://unpkg.com/@tensorflow-models/handpose@0.0.7/dist/handpose.js"></script>
+		<script src="./fingerpose.js" type="module"></script>
+		<script src="./handsigns/alphabet.js" type="module"></script>
+		<script src="./minigame.js" type="module"></script>
+		<style>
+			body {
+				background-color: black;
+			}
+			.top {
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0%);
+			}
+			.bigtext {
+				-webkit-text-stroke-width: 5px;
+				-webkit-text-stroke-color: black;
+				font-size: 100px;
+				color: white;
+				font-family: 'Poppins', sans-serif;
+			}
+			.center {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%)
+			}
+			.flip {
+				transform: rotateY(180deg) translate(50%, -50%);
+			}
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<video id="video" class="center flip" autoplay></video>
+		<canvas id="canvas" class="center flip"></canvas>
+		<h1 id="letter" class="top bigtext"></h1>
+		<div class="center">
+			<h1 id="centertext" class="bigtext">Loading...</h1>
+		</div>
+		<img id="display"></img>
+	</body>
+</html>
